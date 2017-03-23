@@ -1,3 +1,22 @@
+Instructions updated
+
+The graphs created are referred to the information about the electrical consumption 
+
+The columns were defined as date, time or numeric type respectively 
+
+once this was done the datetime column was created joining both date and time 
+
+the weekday column was created to know the day of the week of the measurements 
+
+The first plot was a histogram with the names in its axis 
+
+The second plot was a line plot 
+
+The third plot a multiple lines plot, creating the legend repesctively 
+
+The fourth plot was a multiple graphs plot 
+
+
 ## Introduction
 
 This assignment uses data from
