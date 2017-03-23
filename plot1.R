@@ -4,7 +4,7 @@ download.file(fileURL, destfile= "~/Documents/Coursera/project_exploratory", met
 #unzip file
 unzip("~/Documents/Coursera/project_exploratory")
 
-measures<-read.table("household_power_consumption.txt", header=TRUE, sep=";")
+measures<-read.csv("household_power_consumption.txt", header=TRUE, sep=";", na.strings = "?")
 names(measures)
 
 measures$Date<-as.Date(measures$Date, "%d/%m/%Y")

@@ -4,7 +4,7 @@ download.file(fileURL, destfile= "~/Documents/Coursera/project_exploratory", met
 #unzip file
 unzip("~/Documents/Coursera/project_exploratory")
 
-measures<-read.table("household_power_consumption.txt", header=TRUE, sep=";")
+measures<-read.csv("household_power_consumption.txt", header=TRUE, sep=";", na.strings = "?")
 names(measures)
 
 measures$Date<-as.Date(measures$Date, "%d/%m/%Y")
@@ -24,12 +24,12 @@ measures_subset<-subset(measures, Date=="2007-02-01"|Date=="2007-02-02")
 
 png("plot4.png", width=480, height=480)
 par(mfrow=c(2,2))
-with(measures_subset, plot(datetime, Global_active_power/1000, type="l", ylab="Global Active Power (kilowatts)", xlab="datetime"))
-with(measures_subset, plot(datetime, Voltage/1000, type="l", ylab="Voltage (kilovolts)"))
+with(measures_subset, plot(datetime, Global_active_power, type="l", ylab="Global Active Power (kilowatts)", xlab="datetime"))
+with(measures_subset, plot(datetime, Voltage, type="l", ylab="Voltage (kilovolts)"))
 with(measures_subset, plot(datetime, Sub_metering_1, type="l", ylab="Energy sub metering"))
 with(measures_subset, lines(datetime, Sub_metering_2, col="red"))
 with(measures_subset, lines(datetime, Sub_metering_3, col="blue"))
 legend(x="topright", legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3"), col=c("black","red","blue"),  lwd=1 )
-with(measures_subset, plot(datetime, Global_reactive_power/1000, type="l", ylab="Gobal Reactive Power (kilowatts)", xlab="datetime"))
+with(measures_subset, plot(datetime, Global_reactive_power, type="l", ylab="Gobal Reactive Power (kilowatts)", xlab="datetime"))
 dev.off()
 
